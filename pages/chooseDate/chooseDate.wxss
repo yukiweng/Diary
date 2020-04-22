@@ -1,0 +1,24 @@
+.wrapper{
+ height:100vh;
+ padding:2em 0;
+ box-sizing:border-box;
+ overflow: hidden;
+}
+.columnWrapper{
+  height:300px;
+  text-align: center;
+}
+.buttonWrapper{
+  display: flex;
+  justify-content: center;
+  margin-top:6em;
+}
+.button{
+  background: transparent;
+  border:1px solid #999;
+  font-size:14px;
+  color:#333;
+  margin:0 !important;
+  padding:0.5em 0.8em !important;
+  width:8em !important;
+}

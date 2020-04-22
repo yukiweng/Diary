@@ -1,0 +1,16 @@
+<view class="wrapper" wx:if="{{type==='write'||finishRequest}}">
+<view class="head">
+<text>{{date}}</text>
+<text class="feeling {{feeling==='smile'?'active':''}}" bindtap="changeFeeling" data-x="smile">😊</text>
+<text class="feeling {{feeling==='normal'?'active':''}}" bindtap="changeFeeling" data-x="normal">😑</text>
+<text class="feeling {{feeling==='cry'?'active':''}}" bindtap="changeFeeling" data-x="cry">😢</text>
+</view>
+<textarea class="textarea" bindinput="watchValue" maxlength="120" placeholder="{{placeholder}}" value="{{content}}">
+</textarea>
+<view class="buttonWrapper">
+<button class="button" bindtap="beforeDelete" wx:if="{{type!=='write'&&content&&!placeholder}}" style="margin-right:1em;color:#F6705A">删除</button>
+<button class="button" bindtap="save" wx:if="{{isInput}}">保存</button>
+<button class="button" bindtap="cancel" wx:else>确定</button>
+<button class="button" bindtap="cancel">取消</button>
+</view>
+</view>

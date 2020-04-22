@@ -1,0 +1,40 @@
+.wrapper{
+  width: 100vw;
+  height: 100vh;
+
+}
+.menus{
+  display: flex;
+  justify-content: flex-end;
+}
+.menusLi{
+  padding:0.8em 1em;
+}
+.tab{
+  border:2rpx solid #999;
+  border-radius: 8rpx;
+  margin:0.5em 1em;
+  padding:0.5em;
+  box-shadow: 0 4rpx 4rpx #eee;
+  display: flex;
+  flex-direction: column;
+}
+.date{
+  border-bottom:2rpx dashed #999;
+  width:5.5em;
+  padding:0.5em 0;
+  margin-left:0.5em;
+  text-align: center;
+}
+.content{
+  padding:0.5em;
+  word-break: break-all
+}
+.tips{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  height: 6em;
+  padding:2em;
+}

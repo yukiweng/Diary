@@ -1,0 +1,35 @@
+{
+  "pages": [  
+    "pages/home/home",
+    "pages/mine/mine",  
+    "pages/chooseDate/chooseDate", 
+    "pages/login/login", 
+    "pages/write/write"  
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小日记",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#7FC1E0",
+    "backgroundColor": "#FFF",
+    "borderStyle": "black",
+    "list": [{
+      "pagePath": "pages/home/home",
+      "iconPath":"icon/diary2.png",
+      "selectedIconPath":"icon/diary.png",
+      "text": "主页"
+    },
+    {
+      "pagePath": "pages/mine/mine",
+      "iconPath": "icon/mine2.png",
+      "selectedIconPath": "icon/mine.png",
+      "text": "我的"
+    }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,18 @@
+<view class="wrapper">
+  <view class="menus">
+  <text class="menusLi" bindtap="openDiary" data-x="write">📝 写日记</text>
+  <navigator url="/pages/chooseDate/chooseDate" class="menusLi" wx:if="{{isLogin}}">📅 跳转某天</navigator>
+  </view>
+  <view wx:if="{{list.length===0 && loading===false}}" class="tips">
+    <text>哎呀，还没有日记呢</text>
+    <text>赶快写一篇试试吧😊</text>
+  </view>
+  <view wx:for="{{list}}" wx:for-item="diary" wx:key="index" wx:if="{{list&&isLogin}}" class="tab" data-x="update" data-id="{{diary.id}}" bindtap="openDiary" bindlongpress="beforeDelete">
+    <text class="date">{{diary.attributes.date}}</text>
+    <text class="content">{{diary.attributes.content}}</text> 
+  </view>
+   <view wx:if="{{list&&!isLogin}}" wx:for="{{list}}" wx:for-item="diary" wx:key="index" class="tab" data-x="update" data-id="{{index}}" bindtap="openDiary" bindlongpress="beforeDelete">
+    <text class="date">{{diary.date}}</text>
+    <text class="content">{{diary.content}}</text> 
+  </view>
+</view>

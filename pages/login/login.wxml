@@ -1,0 +1,7 @@
+<!--pages/login/login.wxml-->
+<view class="wrapper">
+  <view class="userAvatar">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <button loading="{{loading}}" open-type="getUserInfo" bindgetuserinfo="getuserinfo" withCredentials class="loginButton">登录</button>
+</view>

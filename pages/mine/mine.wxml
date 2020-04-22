@@ -1,0 +1,34 @@
+<view class="wrapper">
+  <view class="header" wx:if="{{!isLogin}}">
+    <text style="font-size:40px;">☺</text>
+    <navigator url="/pages/login/login">点击登录</navigator>
+  </view>
+  <view class="header" wx:else>
+    <view class="avatar"><open-data type="userAvatarUrl" ></open-data></view>
+    <open-data type="userNickName"></open-data>
+    <button open-type="contact" class="contactButton">问题反馈</button>
+  </view>
+  <view wx:if="{{!isLogin}}" class="tips">
+    <text>点击登录，开启统计功能吧！</text>
+  </view>
+  <view class="contentWrapper" wx:else>
+    <view class="container" wx:if="{{count&&showCount}}">
+      <canvas canvas-id="pieCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+    </view>
+    <view wx:elif="{{!showCount}}" class="diaryWrapper">
+      <text class="title" wx:if="{{feeling==='smile'}}">最近 😊 的三天：</text>
+      <text class="title" wx:elif="{{feeling==='normal'}}">最近 😑 的三天：</text>
+      <text class="title" wx:elif="{{feeling==='cry'}}">最近 😢 的三天：</text> 
+      <view wx:for="{{diaryList}}" wx:for-item="diary" wx:key="index" class="tab">
+        <text class="date">{{diary.attributes.date}}</text>
+        <text class="content">{{diary.attributes.content}}</text> 
+      </view>
+      <view class="buttonWrapper">
+        <button class="typeButton" wx:if="{{feeling!=='smile'}}" data-x="smile" bindtap="fetchOtherDiary">😊</button>
+        <button class="typeButton" wx:if="{{feeling!=='normal'}}" data-x="normal" bindtap="fetchOtherDiary">😑</button>
+        <button class="typeButton" wx:if="{{feeling!=='cry'}}" data-x="cry" bindtap="fetchOtherDiary">😢</button>
+        <button class="typeButton" data-x="count" bindtap="toShowCount">统计</button>
+      </view>
+    </view>
+  </view>
+</view>
